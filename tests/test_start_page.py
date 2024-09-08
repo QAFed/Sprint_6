@@ -1,5 +1,5 @@
 from selenium import webdriver
-from pages.start_page import HomePageSamokat
+from pages.home_page import HomePageSamokat
 
 
 class TestStartPage:
