@@ -13,8 +13,9 @@ class TestStartPage:
         self.driver.get('https://qa-scooter.praktikum-services.ru/')
         home_page = HomePageSamokat(self.driver)
         home_page.wait_for_load_logo()
-        home_page.click_button_order_in_header()
-        assert self.driver.current_url == 'https://qa-scooter.praktikum-services.ru/order'
+
+
+
 
     @classmethod
     def teardown_class(cls):

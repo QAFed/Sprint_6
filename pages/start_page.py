@@ -19,3 +19,6 @@ class HomePageSamokat:
     def click_button_order_in_body(self):
         self.driver.find_element(*self.button_order_in_body).click()
 
+    def scroll_to_question(self):
+        
+
