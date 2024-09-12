@@ -26,3 +26,15 @@ class QestAndAnswers:
     ]]
 
 
+class UsersDataForOrder:
+    user_1 = {
+        'name': 'Вася',
+        'family': 'Пупкин',
+        'address':'Уличная 7',
+        'metro':'Сокол',
+        'tel_number':'79009009090',
+        'date_delivery':'10.10.2024',
+        'rental_period':'сутки',
+        'color':"черный",
+        'comment_for_courier': '1 комент для курьера 1'
+    }
