@@ -12,7 +12,7 @@ class TestOrderPositive:
         def setup_class(cls):
             cls.driver = webdriver.Firefox()
 
-        @pytest.mark.parametrize('user_data_dict' , [UsersDataForOrder.user_1])
+        @pytest.mark.parametrize('user_data_dict' , [UsersDataForOrder.user_1, UsersDataForOrder.user_2])
 
         def test_positive_order_scenario_start_to_click_button_in_header(self, user_data_dict):
             self.driver.get('https://qa-scooter.praktikum-services.ru/order')

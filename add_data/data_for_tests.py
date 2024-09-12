@@ -38,3 +38,15 @@ class UsersDataForOrder:
         'color':"черный",
         'comment_for_courier': '1 комент для курьера 1'
     }
+
+    user_2 = {
+        'name': 'Петя',
+        'family': 'Крутов',
+        'address': 'Переулковый 9',
+        'metro': 'Митино',
+        'tel_number': '79109109191',
+        'date_delivery': '11.10.2024',
+        'rental_period': 'сутки',
+        'color': "серый",
+        'comment_for_courier': '2 комент для курьера 2'
+    }
