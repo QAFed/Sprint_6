@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 class OrderPage:
     header_first_screen_user_data = [By.XPATH, '//div[text()="Для кого самокат"]']
@@ -21,6 +22,8 @@ class OrderPage:
     header_confirm_popup = [By.XPATH, '//div[text()="Хотите оформить заказ?"]']
     header_finish_order_poup = [By.XPATH, '//div[text()="Заказ оформлен"]']
     message_finish_order_poup = [By.XPATH, '//div[contains(@class,"Order_Text")]']
+    cookie_button = [By.XPATH, '//button[contains(@class,"App_CookieButton")]']
+
     def __init__(self, driver):
         self.driver = driver
 
@@ -107,5 +110,11 @@ class OrderPage:
         self.insert_comment_for_courier_input(user_data_dict['comment_for_courier'])
         self.rental_period_dropdown_choice(user_data_dict['rental_period'])
 
-
+    def accept_cookie(self):
+        try:
+            WebDriverWait(self.driver, 1).until(
+                expected_conditions.visibility_of_element_located(self.cookie_button))
+            self.driver.find_element(*self.cookie_button).click()
+        except (TimeoutException, NoSuchElementException):
+            print("Кнопка принятия cookies не найдена. Продолжаем выполнение теста.")
 

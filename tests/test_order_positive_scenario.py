@@ -18,6 +18,7 @@ class TestOrderPositive:
             self.driver.get('https://qa-scooter.praktikum-services.ru/order')
             order_page = OrderPage(self.driver)
             order_page.wait_first_screen_user_data()
+            order_page.accept_cookie()
             order_page.set_user_data_on_first_screen_order(user_data_dict)
             order_page.click_dalee_button()
             order_page.set_user_data_on_second_screen_order(user_data_dict)
