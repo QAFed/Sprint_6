@@ -65,3 +65,9 @@ class HomePageSamokat:
         answer_div_locator = [By.XPATH, f'{question_locator}/parent::div/parent::div/div/p/parent::div']
         answer_div = self.driver.find_element(*answer_div_locator)
         assert answer_div.get_attribute("hidden") is None
+
+    def click_zakazat(self, where):
+        if where == "header":
+            self.click_button_order_in_header()
+        if where == "body":
+            self.click_button_order_in_body()
