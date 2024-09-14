@@ -116,5 +116,5 @@ class OrderPage:
                 expected_conditions.visibility_of_element_located(self.cookie_button))
             self.driver.find_element(*self.cookie_button).click()
         except (TimeoutException, NoSuchElementException):
-            print("Кнопка принятия cookies не найдена. Продолжаем выполнение теста.")
+            pass
 
