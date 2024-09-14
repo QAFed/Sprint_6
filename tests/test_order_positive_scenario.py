@@ -1,5 +1,5 @@
 import time
-
+from pages.base_page import HeaderElements
 import pytest
 from add_data.data_for_tests import UsersDataForOrder
 from pages.order_page import OrderPage
@@ -29,6 +29,17 @@ class TestOrderPositive:
             order_page.wait_confirm_popup()
             order_page.click_confirm_popup_button_yes()
             order_page.assert_popup_finish_is_present_with_number_of_order()
+
+        def test_logo_yandex_click_go_to_dzen(self):
+            self.driver.get('https://qa-scooter.praktikum-services.ru/order')
+            print("Список вкладок ДО", self.driver.window_handles)
+            header_elements = HeaderElements(self.driver)
+            header_elements.click_button(header_elements.logo_yandex)
+            print("Список вкладок ПОСЛЕ", self.driver.window_handles)
+            self.driver.switch_to.window(self.driver.window_handles[-1])
+            time.sleep(5)
+            assert "dzen.ru" in self.driver.current_url
+
         @classmethod
         def teardown_class(cls):
             cls.driver.quit()
