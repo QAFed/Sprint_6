@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions
 class HomePageSamokat:
     button_order_in_header = [By.XPATH, '//div[contains(@class, "Header_Nav")]/button[text()="Заказать"]']
     button_order_in_body = [By.XPATH, '//div[contains(@class, "Home_FinishButton")]/button[text()="Заказать"]']
+    logo_yandex = [By.XPATH, '//a[contains(@class, "Header_LogoYandex")]']
 
     def __init__(self, driver):
         self.driver = driver
