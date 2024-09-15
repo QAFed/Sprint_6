@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
-class HomePageSamokat:
+class HomePageScooter:
     button_order_in_header = [By.XPATH, '//div[contains(@class, "Header_Nav")]/button[text()="Заказать"]']
     button_order_in_body = [By.XPATH, '//div[contains(@class, "Home_FinishButton")]/button[text()="Заказать"]']
     logo_yandex = [By.XPATH, '//a[contains(@class, "Header_LogoYandex")]']
@@ -66,7 +66,7 @@ class HomePageSamokat:
         answer_div = self.driver.find_element(*answer_div_locator)
         assert answer_div.get_attribute("hidden") is None
 
-    def click_zakazat(self, where):
+    def click_order(self, where):
         if where == "header":
             self.click_button_order_in_header()
         if where == "body":

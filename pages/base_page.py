@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 class HeaderElements:
     logo_yandex = [By.XPATH, '//a[contains(@class, "Header_LogoYandex")]']
-    logo_samokat = [By.XPATH, '//a[contains(@class,"Header_LogoScooter")]']
+    logo_scooter = [By.XPATH, '//a[contains(@class,"Header_LogoScooter")]']
 
     def __init__(self, driver):
         self.driver = driver

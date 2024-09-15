@@ -51,7 +51,7 @@ class OrderPage:
     def insert_tel_number_into_input(self, tel_number):
         self.driver.find_element(*self.tel_number_input).send_keys(tel_number)
 
-    def click_dalee_button(self):
+    def click_next_button(self):
         self.driver.find_element(*self.dalee_button).click()
 
     def wait_second_screen_user_data(self):
@@ -78,7 +78,7 @@ class OrderPage:
     def insert_comment_for_courier_input(self, comment_for_courier):
         self.driver.find_element(*self.comment_for_courier_input).send_keys(comment_for_courier)
 
-    def click_zakazat_button(self):
+    def click_order_button(self):
         self.driver.find_element(*self.zakazat_button).click()
 
     def wait_confirm_popup(self):
