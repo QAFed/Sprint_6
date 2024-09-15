@@ -5,19 +5,13 @@ from pages.home_page import HomePageSamokat
 from selenium import webdriver
 class TestOrderPositive:
 
-        driver = None
-
-        @classmethod
-        def setup_class(cls):
-            cls.driver = webdriver.Firefox()
-
         @pytest.mark.parametrize('user_data_dict,where' , [[UsersDataForOrder.user_1,'header'], [UsersDataForOrder.user_2, 'body']])
 
-        def test_positive_order_scenario_start_to_click_button(self, user_data_dict, where):
-            self.driver.get('https://qa-scooter.praktikum-services.ru')
-            home_page = HomePageSamokat(self.driver)
+        def test_positive_order_scenario_start_to_click_button(self, driver, user_data_dict, where):
+            driver.get('https://qa-scooter.praktikum-services.ru')
+            home_page = HomePageSamokat(driver)
             home_page.click_zakazat(where)
-            order_page = OrderPage(self.driver)
+            order_page = OrderPage(driver)
             order_page.wait_first_screen_user_data()
             order_page.accept_cookie()
             order_page.set_user_data_on_first_screen_order(user_data_dict)
@@ -27,8 +21,3 @@ class TestOrderPositive:
             order_page.wait_confirm_popup()
             order_page.click_confirm_popup_button_yes()
             order_page.assert_popup_finish_is_present_with_number_of_order()
-
-
-        @classmethod
-        def teardown_class(cls):
-            cls.driver.quit()
