@@ -8,7 +8,7 @@ class TestOrderPositive:
         @pytest.mark.parametrize('user_data_dict,where' , [[UsersDataForOrder.user_1,'header'], [UsersDataForOrder.user_2, 'body']])
 
         def test_positive_order_scenario_start_to_click_button(self, driver, user_data_dict, where):
-            driver.get('https://qa-scooter.praktikum-services.ru')
+            driver.get(HomePageScooter.get_url_page())
             home_page = HomePageScooter(driver)
             home_page.click_order(where)
             order_page = OrderPage(driver)

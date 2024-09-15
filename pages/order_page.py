@@ -23,7 +23,11 @@ class OrderPage:
     header_finish_order_poup = [By.XPATH, '//div[text()="Заказ оформлен"]']
     message_finish_order_poup = [By.XPATH, '//div[contains(@class,"Order_Text")]']
     cookie_button = [By.XPATH, '//button[contains(@class,"App_CookieButton")]']
+    url_page = 'https://qa-scooter.praktikum-services.ru/order'
 
+    @classmethod
+    def get_url_page(cls):
+        return cls.url_page
     def __init__(self, driver):
         self.driver = driver
 

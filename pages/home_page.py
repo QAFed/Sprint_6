@@ -6,7 +6,10 @@ class HomePageScooter:
     button_order_in_header = [By.XPATH, '//div[contains(@class, "Header_Nav")]/button[text()="Заказать"]']
     button_order_in_body = [By.XPATH, '//div[contains(@class, "Home_FinishButton")]/button[text()="Заказать"]']
     logo_yandex = [By.XPATH, '//a[contains(@class, "Header_LogoYandex")]']
-
+    url_page = 'https://qa-scooter.praktikum-services.ru/'
+    @classmethod
+    def get_url_page(cls):
+        return cls.url_page
     def __init__(self, driver):
         self.driver = driver
 
