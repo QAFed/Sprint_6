@@ -2,7 +2,6 @@ import pytest
 from add_data.data_for_tests import UsersDataForOrder
 from pages.order_page import OrderPage
 from pages.home_page import HomePageScooter
-from selenium import webdriver
 class TestOrderPositive:
 
         @pytest.mark.parametrize('user_data_dict,where' , [[UsersDataForOrder.user_1,'header'], [UsersDataForOrder.user_2, 'body']])

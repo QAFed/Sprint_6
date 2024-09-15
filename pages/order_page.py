@@ -67,7 +67,6 @@ class OrderPage:
 
     def rental_period_dropdown_choice(self, period):
         period_locator = [By.XPATH, f'//div[contains(@class,"Dropdown-option") and text()="{period}"]']
-        # period_locator = [By.XPATH, '//div[contains(@class,"Dropdown-option") and text()="сутки"]']
         self.driver.find_element(*self.rental_period_dropdown).click()
         WebDriverWait(self.driver, 5).until(
             expected_conditions.visibility_of_element_located(period_locator))

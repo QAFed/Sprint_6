@@ -1,5 +1,4 @@
 import time
-
 from pages.order_page import OrderPage
 from pages.home_page import HomePageScooter
 from pages.base_page import HeaderElements

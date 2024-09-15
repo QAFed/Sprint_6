@@ -22,9 +22,6 @@ class HomePageScooter:
     def click_button_order_in_body(self):
         self.driver.find_element(*self.button_order_in_body).click()
 
-    # def scroll_to_question(self):
-
-
     def check_answer_by_question(self, question, answer):
         question_locator = f'//div[contains(@id,"accordion__heading") and text()="{question}"]'
         question_element = self.driver.find_element(By.XPATH, question_locator)
@@ -33,8 +30,6 @@ class HomePageScooter:
         self.driver.find_element(By.XPATH, f'{question_locator}/parent::div/parent::div').click()
         answer_locator = [By.XPATH, f'{question_locator}/parent::div/parent::div/div/p']
         answer_text = self.driver.find_element(*answer_locator).text
-        # print("ОЖИДАЕМЫЙ ОТВЕТ", answer)
-        # print("ФАКТИЧЕСКИЙ ОТВЕТ", answer_text)
         assert answer_text == answer
 
 
@@ -46,8 +41,6 @@ class HomePageScooter:
         self.driver.find_element(By.XPATH, f'{question_locator}/parent::div/parent::div').click()
         answer_locator = [By.XPATH, f'{question_locator}/parent::div/parent::div/div/p']
         answer_text = self.driver.find_element(*answer_locator).text
-        # print("ОЖИДАЕМЫЙ ОТВЕТ", answer)
-        # print("ФАКТИЧЕСКИЙ ОТВЕТ", answer_text)
         assert answer_text == answer
 
     def check_answers_is_hidden(self, question):

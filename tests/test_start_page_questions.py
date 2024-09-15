@@ -1,5 +1,4 @@
 import pytest
-from selenium import webdriver
 from pages.home_page import HomePageScooter
 from add_data.data_for_tests import QestAndAnswers
 
