@@ -1,8 +1,8 @@
-import time
 from pages.order_page import OrderPage
 from pages.home_page import HomePageScooter
 from pages.base_page import HeaderElements
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
 class TestStartPage:
 
     def test_logo_yandex_click_go_to_dzen(self, driver):
@@ -10,8 +10,7 @@ class TestStartPage:
         header_elements = HeaderElements(driver)
         header_elements.click_button(header_elements.logo_yandex)
         driver.switch_to.window(driver.window_handles[-1])
-        time.sleep(2)
-        assert "dzen.ru" in driver.current_url
+        WebDriverWait(driver, 3).until(expected_conditions.url_contains("dzen.ru"))
 
     def test_logo_samokat_click_go_to_home_page(self, driver):
         driver.get(OrderPage.get_url_page())
