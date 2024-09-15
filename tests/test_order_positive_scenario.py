@@ -1,5 +1,3 @@
-import time
-from pages.base_page import HeaderElements
 import pytest
 from add_data.data_for_tests import UsersDataForOrder
 from pages.order_page import OrderPage
