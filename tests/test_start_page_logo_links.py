@@ -1,0 +1,22 @@
+from pages.order_page import OrderPage
+from pages.home_page import HomePageScooter
+from pages.base_page import HeaderElements
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
+class TestStartPage:
+
+    def test_logo_yandex_click_go_to_dzen(self, driver):
+        driver.get(OrderPage.get_url_page())
+        header_elements = HeaderElements(driver)
+        header_elements.click_button(header_elements.logo_yandex)
+        driver.switch_to.window(driver.window_handles[-1])
+        WebDriverWait(driver, 3).until(expected_conditions.url_contains("dzen.ru"))
+
+    def test_logo_samokat_click_go_to_home_page(self, driver):
+        driver.get(OrderPage.get_url_page())
+        header_elements = HeaderElements(driver)
+        header_elements.click_button(header_elements.logo_scooter)
+        home_page = HomePageScooter(driver)
+        home_page.wait_for_load_logo()
+        assert driver.current_url == HomePageScooter.get_url_page()
+
